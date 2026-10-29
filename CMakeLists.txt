@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED (VERSION 3.20)
 
-PROJECT (sac-energy)
+PROJECT (metrics)
 
 # Where the compiled sac modules result
 SET (DLL_BUILD_DIR "${PROJECT_BINARY_DIR}/lib")
@@ -33,4 +33,4 @@ FOREACH (TARGET IN ITEMS ${TARGETS})
 ENDFOREACH ()
 
 # This build target is responsible for generating the package sac2crc file
-CREATE_SAC2CRC_TARGET ("energy" "${DLL_BUILD_DIR}" "${DLL_BUILD_DIR}" "")
+CREATE_SAC2CRC_TARGET ("metrics" "${DLL_BUILD_DIR}" "${DLL_BUILD_DIR}" "")
