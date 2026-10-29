@@ -9,7 +9,6 @@ export all;
 objdef ControlFlow TheControlFlow = createControlFlow();
 
 external ControlFlow createControlFlow();
-    #pragma effect World::TheWorld
     #pragma linkobj "src/control_flow.o"
     #pragma linksign [1]
 
