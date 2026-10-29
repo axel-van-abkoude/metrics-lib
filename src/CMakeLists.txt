@@ -20,6 +20,8 @@ SET (SAC_SRC
     Rapl.sac
     Thermal.sac
     Util.sac
+    Matmul.sac
+    Inc.sac
 )
 
 # For every C source, compile an object file maintaining the right
