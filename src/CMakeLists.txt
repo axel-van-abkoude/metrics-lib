@@ -21,6 +21,7 @@ SET (SAC_SRC
     Thermal.sac
     Util.sac
     Matmul.sac
+    Saxpy.sac
     Inc.sac
 )
 

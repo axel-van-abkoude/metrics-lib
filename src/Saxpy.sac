@@ -1,0 +1,18 @@
+module Saxpy;
+use Util:all;
+use ControlFlow: {touch};
+export all;
+
+noinline double[n] saxpy_cuda(double a, double[n] x, double[n] y) {
+  touch(); return with {
+    (. <= [i] <= .) : a * x[i] + y[i];
+  } : genarray([n], 0d);
+}
+
+noinline double[n] saxpy_nocuda(double a, double[n] x, double[n] y) {
+  touch(); return with {
+    #pragma nocuda
+    (. <= [i] <= .) : a * x[i] + y[i];
+  } : genarray([n], 0d);
+}
+

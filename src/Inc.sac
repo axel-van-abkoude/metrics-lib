@@ -3,17 +3,16 @@ use Util:all;
 use ControlFlow: {touch};
 export all;
 
-noinline double[*] inc_cuda(double[*] a) {
-  touch();
-  return with {
-    (. <= iv <= .) : a[iv] + 1d;
-  } : modarray(a);
+noinline double[n] inc_cuda(double[n] x) {
+  touch(); return with {
+    (. <= [i] <= .) : x[i] + 1d;
+  } : genarray([n], 0d);
 }
 
-noinline double[*] inc_nocuda(double[*] a) {
-  touch();
-  return with {
+noinline double[n] inc_nocuda(double[n] x) {
+  touch(); return with {
     #pragma nocuda
-    (. <= iv < .) : a[iv] + 1d;
-  } : modarray(a);
+    (. <= [i] < .) : x[i] + 1d;
+  } : genarray([n], 0d);
 }
+
